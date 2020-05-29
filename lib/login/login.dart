@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:smartsecurity/homepage.dart';
+import '../main.dart';
 import 'constants.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -75,14 +76,35 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
+  Widget _buildForgotPasswordBtn() {
+    return Container(
+      alignment: Alignment.centerRight,
+      child: FlatButton(
+        onPressed: () => print(''),
+        padding: EdgeInsets.only(right: 0.0),
+        child: Text(
+          '',
+          style: kLabelStyle,
+        ),
+      ),
+    );
+  }
+
+  
+
   Widget _buildLoginBtn() {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 25.0),
       width: double.infinity,
       child: RaisedButton(
         elevation: 5.0,
-        onPressed: ()=>{
-          MyHomePage()
+        onPressed: (){
+          Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => MyHomePage(),
+          ),
+        );
         },
         padding: EdgeInsets.all(15.0),
         shape: RoundedRectangleBorder(
@@ -183,7 +205,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         height: 30.0,
                       ),
                       _buildPasswordTF(),
+                      _buildForgotPasswordBtn(),
                       _buildLoginBtn(),
+                      _buildSignupBtn(),
                     ],
                   ),
                 ),
