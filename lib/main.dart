@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:smartsecurity/absensi.dart';
+import 'package:smartsecurity/absensi2.dart';
+import 'package:smartsecurity/absensi3.dart';
+import 'package:smartsecurity/bottomnavbar.dart';
 import 'package:smartsecurity/homepage.dart';
 
 import 'login/login.dart';
@@ -15,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LoginScreen(),
+      home: MyBottomNavBar(),
 
       // home: MyHomePage(title: 'Flutter Demo Home Page'),
     );

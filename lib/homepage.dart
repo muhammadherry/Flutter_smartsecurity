@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
         ),
       )  ,
-      bottomNavigationBar: MyBottomNavBar( onChanged: _handleBottomNavChanged,),
+      
     );
   }
 

@@ -1,36 +1,58 @@
 import 'package:flutter/material.dart';
+import 'package:smartsecurity/account.dart';
+import 'package:smartsecurity/homepage.dart';
 
 class MyBottomNavBar extends StatefulWidget {
-  MyBottomNavBar({Key key, this.selectedIndex: 0, @required this.onChanged})
-    : super(key: key);
-
-  final int selectedIndex ;
-  final ValueChanged<int> onChanged;
-
   @override
-  _MyBottomNavBarState createState() => _MyBottomNavBarState();
+  _MyBottomNavBarState createState() => new _MyBottomNavBarState();
 }
 
 class _MyBottomNavBarState extends State<MyBottomNavBar> {
-  int _selectedIndex = 0;
-   
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-      widget.onChanged(_selectedIndex);
-    });
-  }
+  int _bottomNavCurrentIndex = 0;
+  final List<Widget> _container = [
+    new MyHomePage(),
+    new Account(),
+  ];
+
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
-        items: const<BottomNavigationBarItem>[
-          BottomNavigationBarItem( icon: Icon( Icons.home), title: Text('Beranda') ),
-          //BottomNavigationBarItem( icon: Icon( Icons.shopping_cart), title: Text('Pesanan') ),
-          BottomNavigationBarItem( icon: Icon( Icons.account_box), title: Text('Akun') ),
-        ], 
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped,
-        );
+    return new Scaffold(
+        body: _container[_bottomNavCurrentIndex],
+        bottomNavigationBar: _buildBottomNavigation()
+    );
+  }
+
+  Widget _buildBottomNavigation(){
+    return new BottomNavigationBar(
+      type: BottomNavigationBarType.fixed,
+      onTap: (index) {
+        setState(() {
+          _bottomNavCurrentIndex = index;
+        });
+      },
+      currentIndex: _bottomNavCurrentIndex,
+      items: [
+        BottomNavigationBarItem(
+          
+          icon: new Icon(
+            Icons.home,
+            color: Colors.grey,
+          ),
+          title: new Text(
+            'Beranda',
+          ),
+        ),
+        
+        BottomNavigationBarItem(
+          
+          icon: new Icon(
+            Icons.person,
+            color: Colors.grey,
+          ),
+
+          title: new Text('Akun'),
+        ),
+      ],
+    );
   }
 }
