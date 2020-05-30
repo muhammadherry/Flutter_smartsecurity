@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smartsecurity/absensi2.dart';
 import 'package:smartsecurity/login/login.dart';
 
 class Account extends StatefulWidget{
@@ -23,6 +24,17 @@ class AccountState extends State<Account>{
                     context,
                     MaterialPageRoute(
                       builder: (context) => LoginScreen(),
+                    ),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text('Absen'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Absensi(),
                     ),
                   );
                 },
