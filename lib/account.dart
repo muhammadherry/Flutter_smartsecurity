@@ -18,6 +18,7 @@ class AccountState extends State<Account>{
           child:ListView(
             children: <Widget>[
               ListTile(
+                trailing: Icon(Icons.account_box ),
                 title: Text('Masuk / Daftar'),
                 onTap: () {
                   Navigator.push(
@@ -29,6 +30,7 @@ class AccountState extends State<Account>{
                 },
               ),
               ListTile(
+                trailing: Icon(Icons.book ),
                 title: Text('Absen'),
                 onTap: () {
                   Navigator.push(
