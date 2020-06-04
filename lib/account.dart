@@ -30,6 +30,7 @@ class AccountState extends State<Account>{
                 },
               ),
               ListTile(
+                // leading: icon,
                 trailing: Icon(Icons.book ),
                 title: Text('Absen'),
                 onTap: () {
@@ -40,6 +41,7 @@ class AccountState extends State<Account>{
                     ),
                   );
                 },
+                
               ),
               ListTile(
                 title: Text('Bantuan'),

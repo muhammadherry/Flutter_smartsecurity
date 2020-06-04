@@ -16,8 +16,8 @@ class MyTopbar extends AppBar {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           new Image.asset(
-            "assets/logos/Smart-warga-small.png",
-            height: 40.0,
+            "assets/logos/toplog.png",
+            height: 25.0,
             //width: 100.0,
           ),
                     new Container(

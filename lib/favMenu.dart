@@ -10,7 +10,7 @@ class GuestMenu extends StatelessWidget {
   MenuItems menus;
 
   void getMenus(){
-    String jsonmenu='{"menuitems":[{"icon":"assets/icons/add-user-48.png", "caption":"Tambah Tamu"}]}' ;
+    String jsonmenu='{"menuitems":[{"icon":"assets/logos/absen.png", "caption":"Absen"}]}' ;
     menus=MenuItems.fromJson (jsonDecode(jsonmenu));
   }
 

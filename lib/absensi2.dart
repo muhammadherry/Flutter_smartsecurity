@@ -1,9 +1,8 @@
 import 'dart:io';
-import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
+import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:intl/intl.dart';
 import 'package:smartsecurity/homepage.dart';
 import 'dart:convert';
 
@@ -128,7 +127,17 @@ String _mySelection;
                           context,
                           MaterialPageRoute(builder: (context) => MyHomePage()),
                         );},
-                    )
+                    ),
+                    new DropdownSearch<String>(
+                      mode: Mode.MENU,
+                      showSelectedItem: true,
+                      items: ["Brazil", "Italia (Disabled)", "Tunisia", 'Canada'],
+                      label: "Menu mode",
+                      hint: "country in menu mode",
+                      popupItemDisabled: (String s) => s.startsWith('I'),
+                      onChanged: print,
+                      selectedItem: "Brazil"
+                    ),
                   ],
                 ),
               ),
