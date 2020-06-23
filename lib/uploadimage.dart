@@ -21,7 +21,7 @@ class _imageState extends State<image> {
       _image = imageFile;
     });
   }
-  
+
   Future upload(File imageFile)async{
     var stream = new http.ByteStream(DelegatingStream.typed(imageFile.openRead()));
     var length = await imageFile.length();
@@ -92,3 +92,4 @@ class _imageState extends State<image> {
     );
   }
 }
+/////coba
