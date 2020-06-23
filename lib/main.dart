@@ -4,6 +4,8 @@ import 'package:smartsecurity/absensi2.dart';
 import 'package:smartsecurity/absensi3.dart';
 import 'package:smartsecurity/bottomnavbar.dart';
 import 'package:smartsecurity/homepage.dart';
+import 'package:smartsecurity/uploadimage.dart';
+import 'package:smartsecurity/uploadimage2.dart';
 
 import 'login/login.dart';
 
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyBottomNavBar(),
+      home: image(),
 
       // home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
